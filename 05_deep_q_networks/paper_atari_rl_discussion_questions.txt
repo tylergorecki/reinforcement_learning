@@ -8,14 +8,23 @@ Carefully read the paper. We will discuss the questions below.
 Questions for Discussion:
 
 1) What was novel about this paper?
+- Learning using raw pixels instead of some preprocessing being then fed as input into RL model
+- Deep Q-learning with experience replay
 
 2) Why do you think the authors picked Atari games as the subject matter?
+- Controlled environment, easy to replicate experiments/runs
 
 3) In RL, there are typically sequences of highly correlated states.  
 Why does this pose a problem? How is this handled in the approach?
+- If looking at states in order then they'll be very dependent on each other, one decision may be impacted by previous ones
+- They use experience replay and randomly sample from sequences to perform RL (not in order sequences)
+- Not Markov here, some past dependence (from sequence of states)
 
 4) What is a Q-network?
+- Policy predicting with a model
 
 5) The target y is a function of immediate reward and the future expected value. How is it different from supervised learning?
+- Supervised learning doesn't use a function including future expected value
 
 6) How is stochastic gradient descent used?
+- Taking minibatches to estimate gradient, might take longer to converge in terms of rounds (less computationally expensive)
